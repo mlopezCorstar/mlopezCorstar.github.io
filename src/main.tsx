@@ -6,7 +6,7 @@ import './index.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/CorstarWebsite">
       <App />
     </BrowserRouter>
   </StrictMode>
