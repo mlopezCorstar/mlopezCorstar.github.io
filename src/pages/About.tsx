@@ -1,10 +1,8 @@
 import { Award, Users, Clock, Shield } from 'lucide-react';
 import StatCard from '../components/StatCard';
-import { useModal } from '../contexts/ModalContext';
 import { handleCTAClick } from '../utils/cta';
 
 export default function AboutPage() {
-  const { openInquiryModal } = useModal();
   return (
     <div className="pt-20 min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -12,7 +10,7 @@ export default function AboutPage() {
           <div className="inline-block px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-semibold mb-4">
             Since 1969
           </div>
-          <h1 className="text-5xl font-bold text-slate-900 mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
             About <span className="text-blue-600">Corstar Communications</span>
           </h1>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto no-underline">
@@ -20,7 +18,7 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-8 mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 justify-items-center mb-20">
           <StatCard mainStat="55+" subtext="Years of Excellence" />
           <StatCard mainStat="500+" subtext="Satisfied Clients" />
           <StatCard mainStat="24/7" subtext="Support Available" />
@@ -130,7 +128,7 @@ export default function AboutPage() {
           </p>
           <button
             id="cta-about-contact"
-            onClick={() => handleCTAClick('cta-about-contact', openInquiryModal)}
+            onClick={() => handleCTAClick('cta-about-contact')}
             className="px-8 py-4 bg-white text-blue-600 hover:bg-blue-50 font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Contact Us Today

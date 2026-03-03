@@ -5,7 +5,7 @@ export default function RemoteSupport() {
     <div className="pt-20 min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-slate-900 mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
             Remote <span className="text-blue-600">Support</span>
           </h1>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
@@ -36,7 +36,7 @@ export default function RemoteSupport() {
 
               <div className="space-y-4">
                 <a
-                  href="tel:914-347-2700"
+                  href="tel:+19143472700"
                   className="flex items-center gap-4 p-4 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors group"
                 >
                   <div className="p-3 bg-blue-600 rounded-lg">

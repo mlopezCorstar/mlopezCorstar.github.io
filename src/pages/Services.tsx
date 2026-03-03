@@ -1,6 +1,5 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Network, Shield, Cloud, Cable, Phone, Video, Server, Mail, Users, Wrench, ChevronDown } from 'lucide-react';
-import { useModal } from '../contexts/ModalContext';
 import { handleCTAClick } from '../utils/cta';
 
 const services = [
@@ -138,6 +137,14 @@ const services = [
 
 function ServiceAccordion({ service, isOpen, onToggle }: { service: typeof services[0]; isOpen: boolean; onToggle: () => void }) {
   const Icon = service.icon;
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [height, setHeight] = useState(0);
+
+  useEffect(() => {
+    if (contentRef.current) {
+      setHeight(isOpen ? contentRef.current.scrollHeight : 0);
+    }
+  }, [isOpen]);
 
   return (
     <div className="border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300">
@@ -154,10 +161,14 @@ function ServiceAccordion({ service, isOpen, onToggle }: { service: typeof servi
             <p className="text-slate-600 mt-1">{service.description}</p>
           </div>
         </div>
-        <ChevronDown className={`w-6 h-6 text-slate-400 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+        <ChevronDown className={`w-6 h-6 text-slate-400 flex-shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
 
-      {isOpen && (
+      <div
+        ref={contentRef}
+        className="transition-all duration-300 ease-in-out overflow-hidden"
+        style={{ maxHeight: `${height}px`, opacity: isOpen ? 1 : 0 }}
+      >
         <div className="px-6 py-6 bg-slate-50 border-t border-slate-200">
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {service.details.map((detail, idx) => (
@@ -168,20 +179,19 @@ function ServiceAccordion({ service, isOpen, onToggle }: { service: typeof servi
             ))}
           </ul>
         </div>
-      )}
+      </div>
     </div>
   );
 }
 
 export default function Services() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
-  const { openInquiryModal } = useModal();
 
   return (
     <div className="pt-20 min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-slate-900 mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
             Our <span className="text-blue-600">Services</span>
           </h1>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
@@ -208,7 +218,7 @@ export default function Services() {
           </p>
           <button
             id="cta-services-consultation"
-            onClick={() => handleCTAClick('cta-services-consultation', openInquiryModal)}
+            onClick={() => handleCTAClick('cta-services-consultation')}
             className="px-8 py-4 bg-white text-blue-600 hover:bg-blue-50 font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Schedule a Consultation

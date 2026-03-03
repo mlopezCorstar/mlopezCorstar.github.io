@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { Download, Users, FileText, Phone } from 'lucide-react';
+import { useState, useEffect, FormEvent } from 'react';
+import { Download, Users, FileText, Phone, Lock } from 'lucide-react';
 
 type IntentType = 'contact' | 'quote' | 'callback';
 
@@ -19,7 +19,67 @@ interface Inquiry {
   created_at: string;
 }
 
+function AdminLogin({ onAuth }: { onAuth: () => void }) {
+  const [password, setPassword] = useState('');
+  const [loginError, setLoginError] = useState('');
+
+  const handleLogin = (e: FormEvent) => {
+    e.preventDefault();
+    const adminPassword = import.meta.env.VITE_ADMIN_PASSWORD;
+    if (!adminPassword) {
+      setLoginError('Admin access is not configured.');
+      return;
+    }
+    if (password === adminPassword) {
+      sessionStorage.setItem('admin_auth', 'true');
+      onAuth();
+    } else {
+      setLoginError('Invalid password. Please try again.');
+      setPassword('');
+    }
+  };
+
+  return (
+    <div className="pt-20 min-h-screen flex items-center justify-center bg-gradient-to-b from-slate-50 to-white">
+      <div className="max-w-md w-full mx-4">
+        <div className="bg-white rounded-2xl shadow-xl border border-slate-200 p-8">
+          <div className="flex justify-center mb-6">
+            <div className="p-4 bg-blue-50 rounded-full">
+              <Lock className="w-8 h-8 text-blue-600" />
+            </div>
+          </div>
+          <h1 className="text-2xl font-bold text-slate-900 text-center mb-2">Admin Access</h1>
+          <p className="text-slate-600 text-center mb-8">Enter your password to continue</p>
+
+          <form onSubmit={handleLogin} className="space-y-4">
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => { setPassword(e.target.value); setLoginError(''); }}
+              placeholder="Enter admin password"
+              className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+              autoFocus
+            />
+            {loginError && (
+              <p className="text-red-600 text-sm">{loginError}</p>
+            )}
+            <button
+              type="submit"
+              className="w-full px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              Sign In
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Admin() {
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    return sessionStorage.getItem('admin_auth') === 'true';
+  });
   const [activeTab, setActiveTab] = useState<IntentType>('contact');
   const [data, setData] = useState<Inquiry[]>([]);
   const [loading, setLoading] = useState(true);
@@ -28,8 +88,14 @@ export default function Admin() {
   const [totalCount, setTotalCount] = useState(0);
 
   useEffect(() => {
-    fetchData();
-  }, [activeTab, page]);
+    if (isAuthenticated) {
+      fetchData();
+    }
+  }, [activeTab, page, isAuthenticated]);
+
+  if (!isAuthenticated) {
+    return <AdminLogin onAuth={() => setIsAuthenticated(true)} />;
+  }
 
   const fetchData = async () => {
     setLoading(true);
