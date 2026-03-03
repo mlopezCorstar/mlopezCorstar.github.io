@@ -1,10 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
@@ -96,12 +98,12 @@
 }
 
 .cable-top {
-  top: 1.5%;
+  top: calc(0% - 40px);
   z-index: 20;
 }
 
 .cable-bottom {
-  top: 20.5%;
+  top: calc(19% - 40px);
   z-index: 5;
 }
 
@@ -160,22 +162,16 @@
     height: 183px;
   }
   .cable-top {
-    top: 1.5%;
+    top: calc(0% - 40px);
   }
   .cable-bottom {
-    top: 20.5%;
+    top: calc(19% - 40px);
   }
 }
 
 @media (max-width: 600px) {
-  .cable-img {
-    height: 150px;
-  }
-  .cable-top {
-    top: 1.5%;
-  }
-  .cable-bottom {
-    top: 20.5%;
+  .cable-layer {
+    display: none;
   }
 }
 
