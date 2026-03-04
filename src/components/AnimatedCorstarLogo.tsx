@@ -14,7 +14,7 @@ export default function AnimatedCorstarLogo() {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative flex items-center justify-center">
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -36,8 +36,7 @@ export default function AnimatedCorstarLogo() {
           <img
             src={LOGO_PATH}
             alt="Corstar Communications"
-            className="h-[160px] sm:h-[200px] lg:h-[240px] w-auto drop-shadow-2xl relative z-10"
-            style={{ transform: 'scale(0.4275)' }}
+            className="w-[200px] sm:w-[260px] lg:w-[300px] h-auto drop-shadow-2xl relative z-10"
           />
         </motion.div>
 
@@ -50,7 +49,6 @@ export default function AnimatedCorstarLogo() {
             ease: [0.25, 0.1, 0.25, 1]
           }}
           className="absolute inset-0 pointer-events-none"
-          style={{ transform: 'scale(0.5)' }}
         >
           <svg
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full"
@@ -89,9 +87,8 @@ export default function AnimatedCorstarLogo() {
             ease: "easeOut"
           }}
           className="absolute inset-0 pointer-events-none flex items-center justify-center"
-          style={{ transform: 'scale(0.5)' }}
         >
-          <div className="w-20 h-20 rounded-full bg-blue-400 blur-2xl opacity-60" />
+          <div className="w-10 h-10 rounded-full bg-blue-400 blur-xl opacity-60" />
         </motion.div>
 
         <motion.div
@@ -110,7 +107,6 @@ export default function AnimatedCorstarLogo() {
             ease: "easeOut"
           }}
           className="absolute inset-0 rounded-full pointer-events-none"
-          style={{ transform: 'scale(0.5)' }}
         />
 
         {showPulse && (
@@ -126,9 +122,8 @@ export default function AnimatedCorstarLogo() {
               ease: "easeInOut"
             }}
             className="absolute inset-0 pointer-events-none"
-            style={{ transform: 'scale(0.5)' }}
           >
-            <div className="absolute top-1/2 right-0 -translate-y-1/2 w-8 h-8 bg-blue-500 rounded-full blur-md opacity-60" />
+            <div className="absolute top-1/2 right-0 -translate-y-1/2 w-4 h-4 bg-blue-500 rounded-full blur-sm opacity-60" />
           </motion.div>
         )}
       </motion.div>

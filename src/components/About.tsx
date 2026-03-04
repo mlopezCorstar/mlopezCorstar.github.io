@@ -10,7 +10,7 @@ export default function About() {
   ];
 
   return (
-    <section className="py-32 bg-white">
+    <section className="py-16 sm:py-24 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="space-y-6 text-center">
@@ -20,7 +20,7 @@ export default function About() {
               </span>
             </div>
 
-            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
               Over Five Decades of Network Excellence
             </h2>
 
@@ -47,7 +47,7 @@ export default function About() {
             </div>
 
             <div className="pt-6">
-              <Link to="/about" onClick={() => window.scrollTo(0, 0)} className="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-600 text-white font-semibold rounded-full transition-all duration-300 shadow-lg hover:shadow-blue-500/50 hover:scale-105">
+              <Link to="/about" className="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-600 text-white font-semibold rounded-full transition-all duration-300 shadow-lg hover:shadow-blue-500/50 hover:scale-105">
                 Learn More About Us
               </Link>
             </div>

@@ -1,5 +1,4 @@
 import { Cable, Zap, Layers, TrendingUp } from 'lucide-react';
-import { useModal } from '../contexts/ModalContext';
 import { handleCTAClick } from '../utils/cta';
 
 const benefits = [
@@ -21,10 +20,9 @@ const benefits = [
 ];
 
 export default function CablingHighlight() {
-  const { openInquiryModal } = useModal();
 
   return (
-    <section className="relative py-24 bg-gradient-to-br from-blue-950 via-slate-900 to-blue-950 overflow-hidden">
+    <section className="relative py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-blue-950 via-slate-900 to-blue-950 overflow-hidden">
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9Im5ldCIgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDAgMCBMIDYwIDYwIE0gNjAgMCBMIDAgNjAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMC41IiBmaWxsPSJub25lIi8+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIgZmlsbD0id2hpdGUiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjbmV0KSIvPjwvc3ZnPg==')]"></div>
       </div>
@@ -34,15 +32,18 @@ export default function CablingHighlight() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="inline-block px-4 py-2 bg-blue-600/20 border border-blue-500/30 text-blue-300 rounded-full text-sm font-semibold mb-6">
-            Specialty Services
-          </div>
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 rounded-full mb-6 shadow-lg shadow-blue-500/50">
-            <Cable className="w-8 h-8 text-white" strokeWidth={2.5} />
+          <div className="flex flex-col items-center gap-4 mb-6">
+            <span className="px-4 py-2 bg-blue-600/20 border border-blue-500/30 text-blue-300 rounded-full text-sm font-semibold">
+              Specialty Services
+            </span>
+            <div className="flex items-center justify-center w-16 h-16 bg-blue-600 rounded-full shadow-lg shadow-blue-500/50">
+              <Cable className="w-8 h-8 text-white" strokeWidth={2.5} />
+            </div>
           </div>
 
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Structured Cabling,<br />
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+            <span className="block sm:inline">Structured Cabling,</span>
+            <br className="hidden sm:block" />
             Built for Speed and Scalability
           </h2>
 
@@ -76,7 +77,7 @@ export default function CablingHighlight() {
         <div className="text-center">
           <button
             id="cta-services-cabling"
-            onClick={() => handleCTAClick('cta-services-cabling', openInquiryModal)}
+            onClick={() => handleCTAClick('cta-services-cabling')}
             className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-full transition-all duration-300 shadow-lg hover:shadow-blue-500/50 hover:scale-105"
           >
             Request a Cabling Quote

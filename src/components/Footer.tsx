@@ -1,13 +1,10 @@
 import { Mail, Phone, MapPin, Facebook } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useModal } from '../contexts/ModalContext';
-import { handleCTAClick } from '../utils/cta';
 
-const LOGO_PATH = '/image.png';
+const LOGO_PATH = `${import.meta.env.BASE_URL}image.png`;
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const { openInquiryModal } = useModal();
 
   return (
     <footer className="bg-slate-900 text-slate-300">
@@ -19,6 +16,7 @@ export default function Footer() {
                 src={LOGO_PATH}
                 alt="Corstar Communications"
                 className="h-20 w-auto"
+                loading="lazy"
               />
             </div>
             <p className="text-slate-400 leading-relaxed mb-4">
@@ -37,19 +35,11 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold text-lg mb-6">Quick Links</h3>
             <ul className="space-y-3">
-              <li><Link to="/" onClick={() => window.scrollTo(0, 0)} className="hover:text-blue-400 transition-colors">Home</Link></li>
-              <li><Link to="/services" onClick={() => window.scrollTo(0, 0)} className="hover:text-blue-400 transition-colors">Services</Link></li>
-              <li><Link to="/about" onClick={() => window.scrollTo(0, 0)} className="hover:text-blue-400 transition-colors">About</Link></li>
-              <li>
-                <button
-                  id="cta-footer-contact"
-                  onClick={() => handleCTAClick('cta-footer-contact', openInquiryModal)}
-                  className="hover:text-blue-400 transition-colors text-left"
-                >
-                  Contact
-                </button>
-              </li>
-              <li><Link to="/remote-support" onClick={() => window.scrollTo(0, 0)} className="hover:text-blue-400 transition-colors">Remote Support</Link></li>
+              <li><Link to="/" className="hover:text-blue-400 transition-colors">Home</Link></li>
+              <li><Link to="/services" className="hover:text-blue-400 transition-colors">Services</Link></li>
+              <li><Link to="/about" className="hover:text-blue-400 transition-colors">About</Link></li>
+              <li><Link to="/contact" className="hover:text-blue-400 transition-colors">Contact</Link></li>
+              <li><Link to="/remote-support" className="hover:text-blue-400 transition-colors">Remote Support</Link></li>
             </ul>
           </div>
 
@@ -58,13 +48,12 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                <button
-                  id="cta-call"
-                  onClick={() => handleCTAClick('cta-call', openInquiryModal)}
-                  className="hover:text-blue-400 transition-colors text-left"
+                <a
+                  href="tel:+19143472700"
+                  className="hover:text-blue-400 transition-colors"
                 >
                   (914) 347-2700
-                </button>
+                </a>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />

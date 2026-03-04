@@ -1,5 +1,4 @@
 import { Shield, FileCheck, Eye, ArrowRight } from 'lucide-react';
-import { useModal } from '../contexts/ModalContext';
 import { handleCTAClick } from '../utils/cta';
 
 const services = [
@@ -21,10 +20,9 @@ const services = [
 ];
 
 export default function ComplianceSection() {
-  const { openInquiryModal } = useModal();
 
   return (
-    <section className="py-24 bg-gradient-to-b from-slate-50 to-slate-100 relative overflow-hidden">
+    <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-slate-50 to-slate-100 relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgxNDgsIDE2MywgMTg0LDAuMDMpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-60"></div>
 
       <div className="absolute top-20 right-10 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
@@ -33,18 +31,19 @@ export default function ComplianceSection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-3 mb-6">
-            <div className="px-4 py-2 bg-blue-600 text-white text-sm font-bold rounded-full shadow-lg">
-              Deadline: November 2025
+            <div className="px-4 py-2 bg-red-600 text-white text-sm font-bold rounded-full shadow-lg">
+              Deadline Passed
             </div>
           </div>
 
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-            Is Your Business Ready for New York's<br />
-            <span className="text-blue-600">2025 Cybersecurity Deadline?</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+            <span className="block sm:inline">The 2025 Cybersecurity Deadline Has Passed</span>
+            <br className="hidden sm:block" />
+            <span className="text-blue-600">Is Your Business Compliant?</span>
           </h2>
 
           <p className="text-lg text-slate-700 max-w-4xl mx-auto leading-relaxed">
-            The updated <span className="font-semibold">NY DFS Cybersecurity Regulation (23 NYCRR 500)</span> requires stronger data protection for financial, legal, and professional firms by November 2025. Corstar helps you meet every requirement.
+            The <span className="font-semibold">NY DFS Cybersecurity Regulation (23 NYCRR 500)</span> deadline has passed. Financial, legal, and professional firms are now required to have stronger data protections in place. Corstar can help you ensure full compliance.
           </p>
         </div>
 
@@ -72,13 +71,13 @@ export default function ComplianceSection() {
         <div className="text-center">
           <div className="mb-8">
             <p className="text-xl font-semibold text-slate-800 mb-6">
-              Stay compliant, secure, and stress-free.
+              Ensure compliance, stay secure, and avoid penalties.
             </p>
           </div>
 
           <button
             id="cta-compliance-assessment"
-            onClick={() => handleCTAClick('cta-compliance-assessment', openInquiryModal)}
+            onClick={() => handleCTAClick('cta-compliance-assessment')}
             className="group inline-flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-blue-500/50 hover:scale-105"
           >
             Schedule a Compliance Assessment

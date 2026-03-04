@@ -1,11 +1,9 @@
 import { ArrowRight } from 'lucide-react';
 import AnimatedCorstarLogo from './AnimatedCorstarLogo';
 import EthernetCable from './EthernetCable';
-import { useModal } from '../contexts/ModalContext';
 import { handleCTAClick } from '../utils/cta';
 
 export default function Hero() {
-  const { openInquiryModal } = useModal();
 
   return (
     <section className="hero relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-slate-50 via-blue-50 to-blue-100">
@@ -20,14 +18,15 @@ export default function Hero() {
       <EthernetCable position="top" />
       <EthernetCable position="bottom" />
 
-      <div className="logo-wrap relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
-        <div className="space-y-8">
-          <div className="flex justify-center mb-8">
+      <div className="logo-wrap relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-24 lg:py-32 text-center">
+        <div className="space-y-6 sm:space-y-8">
+          <div className="flex justify-center mb-4 sm:mb-8">
             <AnimatedCorstarLogo />
           </div>
 
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 tracking-tight leading-tight animate-fade-in-up">
-            Powering Secure, Reliable IT<br />
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-900 tracking-tight leading-tight animate-fade-in-up">
+            <span className="block sm:inline">Powering Secure, Reliable IT</span>
+            <br className="hidden sm:block" />
             <span className="text-blue-600">
               for the Modern Business
             </span>
@@ -41,7 +40,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-12 animate-fade-in-up">
             <button
               id="cta-hero-primary"
-              onClick={() => handleCTAClick('cta-hero-primary', openInquiryModal)}
+              onClick={() => handleCTAClick('cta-hero-primary')}
               className="group px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-blue-500/50 hover:scale-105 flex items-center gap-2"
             >
               Get a Free Network Analysis
@@ -50,7 +49,7 @@ export default function Hero() {
 
             <button
               id="cta-hero-secondary"
-              onClick={() => handleCTAClick('cta-hero-secondary', openInquiryModal)}
+              onClick={() => handleCTAClick('cta-hero-secondary')}
               className="px-8 py-4 border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-semibold rounded-lg transition-all duration-300"
             >
               View Our Services

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
 
@@ -7,6 +7,23 @@ const LOGO_PATH = `${import.meta.env.BASE_URL}image.png`;
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
+  // Close menu on route change
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -60,15 +77,19 @@ export default function Navigation() {
           </button>
         </div>
 
-        {isOpen && (
-          <div className="md:hidden py-4 border-t border-slate-200">
+        <div
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          }`}
+        >
+          <div className="py-4 border-t border-slate-200">
             <div className="flex flex-col space-y-3">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className={`px-4 py-2 font-medium rounded-lg transition-colors ${
+                  className={`px-4 py-2 font-medium rounded-lg transition-colors min-h-[44px] flex items-center ${
                     isActive(link.path)
                       ? 'text-blue-600 bg-blue-50'
                       : 'text-slate-700 hover:bg-slate-100'
@@ -80,14 +101,14 @@ export default function Navigation() {
               <Link
                 to="/remote-support"
                 onClick={() => setIsOpen(false)}
-                className="mx-4 px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-lg transition-all duration-300 text-center flex items-center justify-center gap-2"
+                className="mx-4 px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-lg transition-all duration-300 text-center flex items-center justify-center gap-2 min-h-[44px]"
               >
                 <Phone className="w-4 h-4" />
                 Remote Support
               </Link>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );

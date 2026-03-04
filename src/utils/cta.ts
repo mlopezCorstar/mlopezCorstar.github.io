@@ -1,14 +1,4 @@
-export type CTAIntent = 'quote' | 'contact' | 'callback';
-
 export type CTAAction =
-  | {
-      type: 'inquiry';
-      intent: CTAIntent;
-      source: string;
-      title?: string;
-      buttonText?: string;
-      prefilledService?: string;
-    }
   | { type: 'scroll'; targetId: string }
   | { type: 'link'; url: string; newTab?: boolean }
   | { type: 'tel'; phone: string }
@@ -16,53 +6,36 @@ export type CTAAction =
 
 export const ctaMap: Record<string, CTAAction> = {
   'cta-hero-primary': {
-    type: 'inquiry',
-    intent: 'quote',
-    source: 'hero_cta',
-    title: 'Request a Quote',
-    buttonText: 'Request Quote'
+    type: 'mailto',
+    email: 'info@corstar.com'
   },
   'cta-hero-secondary': {
     type: 'scroll',
     targetId: 'services'
   },
   'cta-services-cabling': {
-    type: 'inquiry',
-    intent: 'contact',
-    source: 'services_cabling',
-    prefilledService: 'Structured Cabling'
+    type: 'mailto',
+    email: 'info@corstar.com'
   },
   'cta-services-it': {
-    type: 'inquiry',
-    intent: 'contact',
-    source: 'services_it',
-    prefilledService: 'Managed IT Services'
+    type: 'mailto',
+    email: 'info@corstar.com'
   },
   'cta-pricing-quote': {
-    type: 'inquiry',
-    intent: 'quote',
-    source: 'pricing_quote',
-    title: 'Request a Quote',
-    buttonText: 'Request Quote'
+    type: 'mailto',
+    email: 'info@corstar.com'
   },
   'cta-compliance-assessment': {
-    type: 'inquiry',
-    intent: 'quote',
-    source: 'compliance_assessment',
-    title: 'Schedule a Compliance Assessment',
-    buttonText: 'Request Assessment'
+    type: 'mailto',
+    email: 'info@corstar.com'
   },
   'cta-about-contact': {
-    type: 'inquiry',
-    intent: 'contact',
-    source: 'about_contact'
+    type: 'mailto',
+    email: 'info@corstar.com'
   },
   'cta-services-consultation': {
-    type: 'inquiry',
-    intent: 'quote',
-    source: 'services_consultation',
-    title: 'Schedule a Consultation',
-    buttonText: 'Request Consultation'
+    type: 'mailto',
+    email: 'info@corstar.com'
   },
   'cta-schedule': {
     type: 'link',
@@ -78,39 +51,16 @@ export const ctaMap: Record<string, CTAAction> = {
     email: 'info@corstar.com'
   },
   'cta-footer-contact': {
-    type: 'inquiry',
-    intent: 'contact',
-    source: 'footer_cta'
+    type: 'mailto',
+    email: 'info@corstar.com'
   },
 };
 
-export interface InquiryModalConfig {
-  intent: CTAIntent;
-  source: string;
-  title?: string;
-  buttonText?: string;
-  prefilledService?: string;
-}
-
-export function handleCTAClick(
-  ctaId: string,
-  openInquiryModal?: (config: InquiryModalConfig) => void
-) {
+export function handleCTAClick(ctaId: string) {
   const action = ctaMap[ctaId];
   if (!action) return;
 
   switch (action.type) {
-    case 'inquiry':
-      if (openInquiryModal) {
-        openInquiryModal({
-          intent: action.intent,
-          source: action.source,
-          title: action.title,
-          buttonText: action.buttonText,
-          prefilledService: action.prefilledService
-        });
-      }
-      break;
     case 'scroll':
       const element = document.getElementById(action.targetId);
       if (element) {
