@@ -25,10 +25,10 @@ export default function Hero() {
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-900 tracking-tight leading-tight animate-fade-in-up">
-            <span className="block sm:inline">Powering Secure, Reliable IT</span>
+            <span className="block sm:inline">Managed IT Services &amp; Network Security</span>
             <br className="hidden sm:block" />
             <span className="text-blue-600">
-              for the Modern Business
+              for Westchester County Businesses
             </span>
           </h1>
 

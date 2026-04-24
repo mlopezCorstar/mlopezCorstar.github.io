@@ -1,0 +1,43 @@
+import LocationPage from '../../components/LocationPage';
+
+const services = [
+  { name: 'Managed IT Services', description: 'Proactive IT monitoring, helpdesk support, and endpoint management for Yonkers businesses of all sizes.' },
+  { name: 'Network Security', description: 'Cybersecurity solutions including threat detection, vulnerability assessments, and compliance support for Yonkers organizations.' },
+  { name: 'Cloud Solutions', description: 'Cloud migration, Microsoft 365 implementation, and disaster recovery for Yonkers companies modernizing their infrastructure.' },
+  { name: 'Structured Cabling', description: 'Professional Cat6, Cat6a, and fiber optic cabling for offices and commercial spaces across Yonkers, NY.' },
+  { name: 'VoIP Phone Systems', description: 'Hosted and on-premise VoIP systems with unified communications for Yonkers businesses replacing traditional phone lines.' },
+  { name: 'Staff Augmentation', description: 'On-demand IT professionals — network engineers, system admins, and security specialists — for Yonkers project needs.' },
+];
+
+const whyCorstar = [
+  'Westchester-based IT company serving Yonkers since 1969',
+  'On-site technicians available throughout Yonkers and southern Westchester',
+  '24/7/365 emergency IT support',
+  'Expertise serving manufacturing, healthcare, and financial firms in Yonkers',
+  'Competitive flat-rate managed IT pricing',
+  'Certified in HIPAA, PCI-DSS, SOC 2, and NY DFS compliance',
+  'Free initial network assessment for new clients',
+  'No long-term contracts required',
+];
+
+export default function Yonkers() {
+  return (
+    <LocationPage
+      meta={{
+        title: 'Managed IT Services Yonkers NY | IT Support | Corstar Communications',
+        description: "Corstar Communications delivers managed IT services, cybersecurity, and IT support to businesses in Yonkers, NY. Westchester's trusted local IT partner since 1969. Call (914) 347-2700.",
+      }}
+      hero={{
+        badge: 'Serving Yonkers, NY',
+        heading: 'Managed IT Services & IT Support in',
+        headingAccent: 'Yonkers, NY',
+        subheading: "Reliable IT support for Yonkers businesses — managed services, network security, cloud solutions, and structured cabling from Westchester County's most experienced local IT provider.",
+      }}
+      intro="Yonkers is the largest city in Westchester County and home to a diverse range of businesses — from manufacturing and healthcare to retail and professional services. Corstar Communications has supported businesses across Yonkers and Westchester County from our Hawthorne, NY office since 1969. Our team provides the full spectrum of IT services Yonkers businesses need: managed IT, cybersecurity, cloud migration, structured cabling, VoIP, and strategic IT consulting — with the responsiveness that comes from being a true local partner."
+      services={services}
+      whyCorstar={whyCorstar}
+      closingHeading="Get IT Support in Yonkers Today"
+      closingBody="Contact Corstar Communications for a free consultation. We serve businesses throughout Yonkers and the greater Westchester County area with on-site and remote IT support, 24 hours a day."
+    />
+  );
+}

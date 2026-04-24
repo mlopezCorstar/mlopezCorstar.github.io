@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { Phone, Mail, MapPin, Clock, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -5,6 +6,10 @@ export default function Contact() {
 
   return (
     <div className="pt-20 min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <Helmet>
+        <title>Contact Corstar Communications | IT Support in Hawthorne, NY</title>
+        <meta name="description" content="Contact Corstar Communications for managed IT services, network security, and structured cabling in Westchester County. Call (914) 347-2700 or email info@corstar.com. Free consultation." />
+      </Helmet>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center mb-16">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">

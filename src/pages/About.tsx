@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { Award, Users, Clock, Shield } from 'lucide-react';
 import StatCard from '../components/StatCard';
 import { handleCTAClick } from '../utils/cta';
@@ -5,16 +6,20 @@ import { handleCTAClick } from '../utils/cta';
 export default function AboutPage() {
   return (
     <div className="pt-20 min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <Helmet>
+        <title>About Corstar | Local IT Company in Westchester County Since 1969</title>
+        <meta name="description" content="Corstar Communications has served businesses across Westchester County, NY, NJ, and CT since 1969. Learn about our history, certified team, and commitment to local IT excellence." />
+      </Helmet>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center mb-16">
           <div className="inline-block px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-semibold mb-4">
             Since 1969
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-            About <span className="text-blue-600">Corstar Communications</span>
+            Your Local IT Partner in <span className="text-blue-600">Westchester County</span> Since 1969
           </h1>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto no-underline">
-            55+ years of excellence in IT services, serving businesses across New York, New Jersey, and Connecticut
+            55+ years of excellence in IT services, serving businesses across Westchester County, New York, New Jersey, and Connecticut
           </p>
         </div>
 
@@ -29,18 +34,19 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold text-slate-900">Our Story</h2>
             <p className="text-lg text-slate-600 leading-relaxed">
               Founded in 1969, Corstar Communications has been at the forefront of technology services for over five decades.
-              What started as a small telecommunications company has evolved into a comprehensive IT solutions provider,
-              serving hundreds of businesses throughout the tri-state area.
+              What started as a small telecommunications company in Hawthorne, NY has evolved into a full-service IT solutions provider
+              serving hundreds of businesses throughout Westchester County and the tri-state area — including White Plains, Yonkers,
+              New Rochelle, Mount Vernon, Tarrytown, and beyond.
             </p>
             <p className="text-lg text-slate-600 leading-relaxed">
-              Our longevity in this industry speaks to our commitment to excellence, innovation, and customer satisfaction.
-              We've adapted and grown alongside technological advances, always staying ahead of the curve to provide our
-              clients with cutting-edge solutions.
+              Our longevity in the Westchester IT market speaks to our commitment to excellence, innovation, and customer satisfaction.
+              We've adapted and grown alongside technological advances — from the earliest business networks to today's cloud, cybersecurity,
+              and compliance challenges — always staying ahead of the curve to provide our clients with the solutions they need.
             </p>
             <p className="text-lg text-slate-600 leading-relaxed">
-              Today, we're proud to be a trusted IT partner for businesses of all sizes, from small startups to
-              enterprise organizations. Our team of certified engineers and technicians brings decades of combined
-              experience to every project.
+              Today, we're proud to be a trusted IT partner for businesses of all sizes across New York, New Jersey, and Connecticut.
+              Our team of certified engineers and technicians brings decades of combined experience to every project, with deep knowledge
+              of the compliance requirements — including NY DFS 23 NYCRR 500, HIPAA, and PCI-DSS — that affect businesses throughout the region.
             </p>
           </div>
 
