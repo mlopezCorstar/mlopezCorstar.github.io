@@ -1,8 +1,13 @@
+import { Helmet } from 'react-helmet-async';
 import { Phone, Mail, Shield, Clock, CheckCircle2, ExternalLink } from 'lucide-react';
 
 export default function RemoteSupport() {
   return (
     <div className="pt-20 min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <Helmet>
+        <title>Remote IT Support | Corstar Communications Westchester NY</title>
+        <meta name="description" content="Access Corstar's secure remote IT support portal. Fast, encrypted remote assistance for Westchester County businesses. Call (914) 347-2700 for immediate help." />
+      </Helmet>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center mb-16">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">

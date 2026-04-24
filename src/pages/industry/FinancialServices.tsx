@@ -1,0 +1,43 @@
+import LocationPage from '../../components/LocationPage';
+
+const services = [
+  { name: 'NY DFS 23 NYCRR 500 Compliance', description: 'End-to-end support for New York DFS Cybersecurity Regulation compliance — risk assessments, MFA, incident response planning, and annual certification.' },
+  { name: 'Network Security', description: 'Firewall management, advanced threat detection, vulnerability assessments, and penetration testing for financial firms across Westchester County.' },
+  { name: 'Managed IT Services', description: 'Proactive IT management with 24/7 monitoring and helpdesk for investment firms, RIAs, insurance agencies, and financial services companies.' },
+  { name: 'Data Backup & Disaster Recovery', description: 'Regulatory-grade backup and business continuity solutions that meet the retention and recovery requirements of financial regulators.' },
+  { name: 'Hosted Email & Archiving', description: 'SEC and FINRA-compliant email archiving, encryption, and Microsoft 365 management for financial services firms in Westchester.' },
+  { name: 'IT Consulting', description: 'Technology strategy, vendor management, and compliance roadmap development for financial services organizations in NY, NJ, and CT.' },
+];
+
+const whyCorstar = [
+  'Specialized expertise in NY DFS 23 NYCRR 500 cybersecurity compliance',
+  'Serving Westchester County financial firms since 1969',
+  'Deep understanding of SEC, FINRA, and state-level data security requirements',
+  'On-site support available throughout Westchester, NJ, and CT',
+  '24/7/365 monitoring and incident response',
+  'Incident response planning and tabletop exercise support',
+  'Confidential service with strong data handling practices',
+  'Free initial compliance gap assessment for new clients',
+];
+
+export default function FinancialServices() {
+  return (
+    <LocationPage
+      meta={{
+        title: 'IT Services for Financial Firms Westchester NY | NY DFS Compliance | Corstar',
+        description: 'Corstar Communications provides managed IT and NY DFS 23 NYCRR 500 cybersecurity compliance services to financial firms across Westchester County, NY. Call (914) 347-2700.',
+      }}
+      hero={{
+        badge: 'Financial Services IT',
+        heading: 'IT Services & Cybersecurity Compliance for',
+        headingAccent: 'Financial Firms in Westchester County',
+        subheading: 'Managed IT, network security, and NY DFS 23 NYCRR 500 compliance support for investment firms, RIAs, insurance agencies, and financial services companies across Westchester County.',
+      }}
+      intro="Financial services firms in Westchester County operate under some of the most demanding cybersecurity and data protection requirements in any industry. New York's DFS Cybersecurity Regulation (23 NYCRR 500) imposes strict obligations on covered entities — including risk assessments, multi-factor authentication, incident response planning, and annual compliance certifications. Corstar Communications has worked with financial firms across Westchester, New York, and the tri-state area since 1969. We understand the regulatory landscape and provide managed IT and cybersecurity services specifically designed to help financial organizations meet their obligations without disrupting day-to-day operations."
+      services={services}
+      whyCorstar={whyCorstar}
+      closingHeading="Is Your Firm Meeting Its NY DFS Obligations?"
+      closingBody="Contact Corstar Communications for a free compliance gap assessment. We work with investment advisors, insurance agencies, and financial services firms across Westchester County to close compliance gaps and strengthen cybersecurity posture."
+    />
+  );
+}

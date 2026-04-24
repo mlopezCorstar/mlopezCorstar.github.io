@@ -11,6 +11,19 @@ const Contact = lazy(() => import('./pages/Contact'));
 const RemoteSupport = lazy(() => import('./pages/RemoteSupport'));
 const Admin = lazy(() => import('./pages/Admin'));
 
+// Local landing pages
+const WhitePlains = lazy(() => import('./pages/local/WhitePlains'));
+const Yonkers = lazy(() => import('./pages/local/Yonkers'));
+const NewRochelle = lazy(() => import('./pages/local/NewRochelle'));
+const MountVernon = lazy(() => import('./pages/local/MountVernon'));
+const Tarrytown = lazy(() => import('./pages/local/Tarrytown'));
+
+// Industry pages
+const FinancialServices = lazy(() => import('./pages/industry/FinancialServices'));
+const Healthcare = lazy(() => import('./pages/industry/Healthcare'));
+const LegalFirms = lazy(() => import('./pages/industry/LegalFirms'));
+const Nonprofits = lazy(() => import('./pages/industry/Nonprofits'));
+
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -56,6 +69,20 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/remote-support" element={<RemoteSupport />} />
           <Route path="/admin" element={<Admin />} />
+
+          {/* Local landing pages */}
+          <Route path="/it-support-white-plains-ny" element={<WhitePlains />} />
+          <Route path="/managed-it-services-yonkers" element={<Yonkers />} />
+          <Route path="/it-services-new-rochelle" element={<NewRochelle />} />
+          <Route path="/it-support-mount-vernon" element={<MountVernon />} />
+          <Route path="/it-services-tarrytown-ny" element={<Tarrytown />} />
+
+          {/* Industry pages */}
+          <Route path="/financial-services-it-westchester" element={<FinancialServices />} />
+          <Route path="/healthcare-it-support-westchester" element={<Healthcare />} />
+          <Route path="/it-services-law-firms-westchester" element={<LegalFirms />} />
+          <Route path="/nonprofit-it-support-westchester" element={<Nonprofits />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>

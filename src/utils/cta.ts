@@ -77,8 +77,13 @@ export function handleCTAClick(ctaId: string) {
     case 'tel':
       window.location.href = `tel:${action.phone}`;
       break;
-    case 'mailto':
-      window.location.href = `mailto:${action.email}`;
+    case 'mailto': {
+      const a = document.createElement('a');
+      a.href = `mailto:${action.email}`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
       break;
+    }
   }
 }
