@@ -1,0 +1,43 @@
+import LocationPage from '../../components/LocationPage';
+
+const services = [
+  { name: 'Managed IT Services', description: '24/7 network monitoring, helpdesk, and endpoint management for New Rochelle businesses under a single flat-rate agreement.' },
+  { name: 'Network Security', description: 'Layered cybersecurity including firewalls, threat detection, email security, and compliance support for New Rochelle organizations.' },
+  { name: 'Cloud Solutions', description: 'Microsoft 365, Azure, and hybrid cloud deployments with backup and disaster recovery for New Rochelle businesses.' },
+  { name: 'Structured Cabling', description: 'Cat6, Cat6a, and fiber optic installation and certification for offices and commercial properties in New Rochelle, NY.' },
+  { name: 'Hosted Email', description: 'Microsoft 365 email migration, archiving, spam filtering, and mobile synchronization for New Rochelle organizations.' },
+  { name: 'IT Consulting', description: 'Strategic technology planning, vendor management, and digital transformation guidance for New Rochelle businesses.' },
+];
+
+const whyCorstar = [
+  'Local Westchester IT company serving New Rochelle since 1969',
+  'On-site support throughout New Rochelle and eastern Westchester County',
+  '24/7/365 monitoring and emergency response',
+  'Deep compliance expertise for regulated industries in New Rochelle',
+  'Trusted by hundreds of businesses across the tri-state area',
+  'Free initial network assessment included',
+  'Certified engineers with decades of experience',
+  'Flexible service agreements — no long-term contracts required',
+];
+
+export default function NewRochelle() {
+  return (
+    <LocationPage
+      meta={{
+        title: 'IT Services New Rochelle NY | Managed IT Support | Corstar Communications',
+        description: 'Corstar Communications provides managed IT services, network security, and cloud solutions to businesses in New Rochelle, NY. Westchester IT experts since 1969. Call (914) 347-2700.',
+      }}
+      hero={{
+        badge: 'Serving New Rochelle, NY',
+        heading: 'IT Services & Managed IT Support in',
+        headingAccent: 'New Rochelle, NY',
+        subheading: 'Comprehensive IT services for New Rochelle businesses — managed IT, cybersecurity, cloud solutions, and structured cabling from a trusted Westchester County IT partner.',
+      }}
+      intro="New Rochelle is a growing business hub in southern Westchester County, with a mix of healthcare, professional services, retail, and technology companies. Corstar Communications has been a trusted IT partner for businesses across Westchester County since 1969, operating from our Hawthorne, NY office. We provide New Rochelle organizations with the full range of IT services they need to operate securely and efficiently — from managed IT and cloud migration to structured cabling and compliance support — with on-site response capabilities and 24/7 remote monitoring."
+      services={services}
+      whyCorstar={whyCorstar}
+      closingHeading="Partner With a Local New Rochelle IT Provider"
+      closingBody="Reach out to Corstar Communications for a free, no-obligation IT consultation. We serve businesses throughout New Rochelle and Westchester County with on-site and remote support, 24 hours a day."
+    />
+  );
+}

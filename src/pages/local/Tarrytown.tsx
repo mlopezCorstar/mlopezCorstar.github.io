@@ -1,0 +1,43 @@
+import LocationPage from '../../components/LocationPage';
+
+const services = [
+  { name: 'Managed IT Services', description: 'Proactive IT management with 24/7 monitoring, helpdesk, and maintenance for Tarrytown and Sleepy Hollow businesses.' },
+  { name: 'Network Security', description: 'Cybersecurity services including threat detection, firewall management, and compliance support for Tarrytown organizations.' },
+  { name: 'Cloud Solutions', description: 'Microsoft 365 and Azure implementations, cloud migration, and backup solutions for Tarrytown businesses.' },
+  { name: 'Structured Cabling', description: 'Cat6, Cat6a, and fiber optic installation for offices and commercial buildings in Tarrytown, Sleepy Hollow, and the surrounding river towns.' },
+  { name: 'VoIP Phone Systems', description: 'Modern hosted and on-premise VoIP phone systems for Tarrytown businesses replacing traditional landlines.' },
+  { name: 'IT Consulting', description: 'Strategic IT planning and technology roadmaps for businesses in Tarrytown and the Hudson Valley corridor.' },
+];
+
+const whyCorstar = [
+  'Local Westchester IT company operating since 1969',
+  'On-site support for Tarrytown, Sleepy Hollow, and the river towns',
+  '24/7/365 monitoring and emergency IT response',
+  'Serving corporate offices, professional services, and hospitality businesses in the area',
+  'Expertise in cloud, cybersecurity, and structured cabling for office buildouts',
+  'Trusted by hundreds of Westchester County businesses',
+  'Free initial consultation and network assessment',
+  'Flexible service agreements with no long-term contracts',
+];
+
+export default function Tarrytown() {
+  return (
+    <LocationPage
+      meta={{
+        title: 'IT Services Tarrytown NY | Managed IT Support | Corstar Communications',
+        description: 'Corstar Communications provides managed IT services, network security, and cloud solutions to businesses in Tarrytown, NY and the Westchester river towns. Since 1969. Call (914) 347-2700.',
+      }}
+      hero={{
+        badge: 'Serving Tarrytown, NY',
+        heading: 'IT Services & Managed IT Support in',
+        headingAccent: 'Tarrytown, NY',
+        subheading: 'Full-service IT support for Tarrytown and the Westchester river towns — managed IT, cybersecurity, cloud solutions, and structured cabling from a trusted local partner since 1969.',
+      }}
+      intro="Tarrytown and the surrounding Hudson River towns — including Sleepy Hollow, Irvington, and Dobbs Ferry — are home to corporate offices, professional services firms, hospitality businesses, and growing small businesses. Corstar Communications has served businesses across Westchester County from our Hawthorne, NY office since 1969. We understand the needs of organizations in the river towns corridor and provide managed IT, cybersecurity, cloud solutions, and structured cabling services with the on-site responsiveness and local knowledge that larger, remote IT vendors cannot offer."
+      services={services}
+      whyCorstar={whyCorstar}
+      closingHeading="Tarrytown IT Support From a Local Westchester Partner"
+      closingBody="Contact Corstar Communications for a free consultation. We serve businesses throughout Tarrytown, the Westchester river towns, and the greater Westchester County area with reliable on-site and remote IT support."
+    />
+  );
+}
