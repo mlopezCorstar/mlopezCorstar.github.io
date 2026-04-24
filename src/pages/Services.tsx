@@ -50,7 +50,7 @@ const services = [
     icon: Cable,
     title: 'Structured Cabling',
     description: 'Professional network cabling installation and certification for offices, data centers, and commercial buildings throughout Westchester County.',
-    body: 'A reliable network starts with a solid physical foundation. Corstar's structured cabling teams serve commercial clients across Westchester County — from small office buildouts in Hawthorne and White Plains to large-scale data center installations. We install and certify Cat6, Cat6a, and fiber optic cabling to industry standards, ensuring your infrastructure is built for the speeds and workloads of today and tomorrow.',
+    body: "A reliable network starts with a solid physical foundation. Corstar's structured cabling teams serve commercial clients across Westchester County — from small office buildouts in Hawthorne and White Plains to large-scale data center installations. We install and certify Cat6, Cat6a, and fiber optic cabling to industry standards, ensuring your infrastructure is built for the speeds and workloads of today and tomorrow.",
     details: [
       'Cat6 & Cat6a Installation',
       'Fiber Optic Cabling & Termination',
