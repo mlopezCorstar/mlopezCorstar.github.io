@@ -28,7 +28,7 @@ export default function Hero() {
             <span className="block sm:inline">Managed IT Services &amp; Network Security</span>
             <br className="hidden sm:block" />
             <span className="text-blue-600">
-              for Westchester County Businesses
+              for Small Businesses
             </span>
           </h1>
 
